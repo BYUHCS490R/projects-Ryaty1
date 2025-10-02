@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(248, 255, 229);
+    background-color: rgb(233, 240, 248);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     color: #000000;
@@ -9,10 +9,22 @@ body {
 h1 {
     color: rgb(228, 3, 3);
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .footer {
     
     font-size: 12px;
-    color: gray;
+    color: rgb(203, 211, 219);
+}
+#other-links {
+    color: rgb(255, 5, 5);
+}
+#links {
+    color: rgb(245, 95, 2);
+}
+#visit {
+    color: rgb(1, 28, 128);
+}
+.italic {
+    font-style: italic;
 }
