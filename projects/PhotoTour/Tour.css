@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: url('pattern.svg');
+    background-size: cover;
+    background-repeat: repeatt;
+    background-color: rgba(255, 255, 255, 0.5); 
+    background-blend-mode: lighten;
+    color: rgb(0, 0, 0);
+    line-height: 2.5;
+}
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    background: url('file.svg');
+    background-repeat: no-repeat;
+    background-position: center 70px;
+    background-size: 80px 80px;
+}
+
+.title {
+    text-align: center;
+    font-size: 50px;
+    margin: 20px 0;
+    color: #0e7192;
+}
+.navbar a {
+    color: #0e7192;
+    font-weight: bold;
+    text-align: center;
+}
+.navbar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mylist {
+    list-style: none;
+    padding-left: 3px; 
+}
+
+.mylist li {
+    background: url('dot.svg') no-repeat left center;
+    background-size: 25px 25px; 
+    padding-left: 35px; 
+    line-height: 25px; 
+}
