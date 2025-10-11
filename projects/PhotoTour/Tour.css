@@ -82,3 +82,14 @@ footer {
     padding: 10px 0;
     border-top: 1px solid #cccccc;
 }
+nav a:hover {
+    color: #ffffff;
+    background-color: #5c6db3;
+    border-radius: 5px;
+}
+nav a.active {
+    color: #ffffff;               /* white text */
+    background-color: #2a3d8e;    /* dark blue background */
+    padding: 3px 8px;             /* a little space inside */
+    border-radius: 5px;           /* rounded corners */
+}
