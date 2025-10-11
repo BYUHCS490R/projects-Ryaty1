@@ -88,8 +88,8 @@ nav a:hover {
     border-radius: 5px;
 }
 nav a.active {
-    color: #ffffff;               /* white text */
-    background-color: #2a3d8e;    /* dark blue background */
-    padding: 3px 8px;             /* a little space inside */
-    border-radius: 5px;           /* rounded corners */
+    color: #ffffff;               
+    background-color: #2a3d8e;    
+    padding: 3px 8px;             
+    border-radius: 5px;           
 }
