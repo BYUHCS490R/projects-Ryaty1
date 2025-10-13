@@ -3,6 +3,19 @@ body {
     margin-top: 20px;
     background-color: #f9f9f9;
 }
+nav a {
+    display: block;
+    /* display: inline-block; #for horizontal */
+    padding: 10px;
+    background-color: #ead40e;
+    border-bottom: 2px solid #f9f9f9;
+    text-decoration: none;
+}
+nav a:hover {
+    text-decoration: underline;
+    background-color: #f9f9f9;
+    color: black;
+}
 
 .cat {
     border: 2px solid black;
@@ -16,11 +29,11 @@ body {
     z-index: -1;
 }
 
-/* position has manyy values: static, relative, absolute, fixed, sticky
+/* position has many values: static, relative, absolute, fixed, sticky
 noted on the relative, absolute and fixed.*/
 
 
-.floater {
+.floater {s
     float: left;
 }
 
