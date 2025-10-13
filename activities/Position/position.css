@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 300px;
+    background-color: #f9f9f9;
+}
+
+.cat {
+    border: 2px solid black;
+    width: 400px;
+    float: right;
+}
+.hammer {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    z-index: -1;
+}
+
+/* position has manyy values: static, relative, absolute, fixed, sticky
+noted on the relative, absolute and fixed.*/
+
+
+.floater {
+    float: left;
+}
+
+.cat img {
+    width: 100%;
+    height: auto;
+}
+.clear {
+    clear: both;
+}
