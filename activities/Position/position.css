@@ -20,7 +20,6 @@ nav a:hover {
 .cat {
     border: 2px solid black;
     width: 300px;
-    float: right;
 }
 .hammer {
     position: relative;
@@ -35,6 +34,7 @@ noted on the relative, absolute and fixed.*/
 
 .floater {
     float: left;
+
 }
 
 .cat img {
