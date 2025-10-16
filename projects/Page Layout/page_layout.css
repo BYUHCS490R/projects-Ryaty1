@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #040000;          
+    line-height: 2.5;
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('fish.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    background-origin: content-box;
+    background-clip: border-box;
+}
+header {
+    height: 150px; 
+}
+.wrapper {
+  width: 850px;
+  margin: 0 auto;
+}
+.title {
+    padding-top: 20px; 
+    font-size: 40px;
+    color: #87d60f;
+    margin-bottom: 5px; 
+    text-shadow: 2px 2px 5px #17010160;
+}
+h1 {
+    border: 3px solid #bea529;        
+    background-color: #5a430f;                          
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    margin: 20px auto;
+    padding: 15px;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px #0000005f;
+    
+}
+nav {
+    height: 50px;
+    line-height: 50px; 
+}
+nav a {
+    font-family: 'Open Sans', sans-serif;
+    display: inline-block;
+    padding: 1px 15px;
+    background-color: #ffc400;        
+    color: rgb(15, 0, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    background-color: #5a430f;        
+    color: rgb(255, 255, 255);
+}
+
+.in {
+    font-size: 30px;
+    color: #2b1f0e;                 
+    font-weight: bold;
+}
+
+.floater {
+    float: left;
+    margin: 10px;
+    border: 2px solid black;
+}
+
+main figure figcaption {
+    font-style: italic;
+    text-align: center;
+    margin-top: 5px;
+}
+
+main p {
+    font-family: 'Merriweather', serif;
+    line-height: 1.7;
+    font-size: 18px;
+    color: #2e2e2e;                  
+}
+
+.clear {
+    clear: both;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #887c40;       
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+footer p {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+}

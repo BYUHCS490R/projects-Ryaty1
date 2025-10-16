@@ -16,7 +16,11 @@ nav a:hover {
     background-color: #f9f9f9;
     color: black;
 }
-
+main figure figcaption {
+    font-style: italic;
+    text-align: center;
+    margin-top: 5px;
+}
 .cat {
     border: 2px solid black;
     width: 300px;
