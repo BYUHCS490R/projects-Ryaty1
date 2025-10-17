@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+}
+.child {
+    background-color: rgb(0, 191, 255);
+}
+.wrapper {
+    display: grid;
+    grid-template-areas: 
+        "top top top"
+        "lside middle rside"
+        "bottom bottom bottom";
+}
+
+header {
+    grid-area: top;
+}
+main {
+    grid-area: middle;
+}
+nav {
+    grid-area: lside;
+}
+footer {
+    grid-area: bottom;
+}
