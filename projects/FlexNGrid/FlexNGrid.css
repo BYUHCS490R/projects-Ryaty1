@@ -13,7 +13,7 @@ body {
 
 
 header {
-  background-color: #004d40;   /* dark green */
+  background-color: #004d40; 
   color: white;
   padding: 1rem;
   text-align: center;
@@ -28,7 +28,7 @@ header h1 {
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 0.5rem;
-  background-color: #00695c;   /* slightly lighter green */
+  background-color: #00695c;   
   padding: 0.5rem 0;
 }
 
@@ -45,7 +45,7 @@ header h1 {
   background: #004d40;
 }
 
-/* ===== LAYOUT (Sidebar + Main) ===== */
+
 .wrap {
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -66,22 +66,11 @@ header h1 {
   border-radius: 0.5rem;
 }
 
-/* ===== PROFILE CARDS ===== */
+
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards in first row, 2 in second */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
-}
-
-@media (max-width: 1100px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 640px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
 }
 
 .card {
@@ -109,7 +98,7 @@ header h1 {
   margin: 0 0 0.8rem;
 }
 
-/* ===== FOOTER ===== */
+
 footer {
   background-color: #004d40;
   color: white;
