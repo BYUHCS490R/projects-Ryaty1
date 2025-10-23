@@ -53,10 +53,10 @@ header h1 {
   padding: 1rem;
 }
 
-@media (max-width: 800px) {
-  .wrap {
-    grid-template-columns: 1fr;
-  }
+.wrap {
+  display: flex;
+  flex-direction: column; 
+  gap: 1rem;
 }
 
 .side {
