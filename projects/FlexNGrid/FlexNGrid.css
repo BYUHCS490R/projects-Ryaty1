@@ -55,9 +55,18 @@ header h1 {
 
 .wrap {
   display: flex;
-  flex-direction: column; 
+  flex-direction: row;
   gap: 1rem;
 }
+
+.wrap main {
+  flex: 3;  
+}
+
+.wrap .side {
+  flex: 1; 
+}
+
 
 .side {
   background: #ffffff;
