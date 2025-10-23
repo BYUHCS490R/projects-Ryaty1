@@ -1,31 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlexNGrid</title>
-    <link rel="stylesheet" href="FlexNGrid.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Layout</title>
+  <link rel="stylesheet" href="FlexNGrid.css" />
 </head>
 <body>
-    <div id="wrapper">
-        <header>
-            <h1>Kimchhay Web Design</h1>
-        </header>
-        <nav>
-            <a href="#">Link</a>
-            <a href="#">Link</a>
-            <a href="#">Link</a>
-            <a href="#">Link</a>
-        </nav>
-        <main>
-            <h1>CSS Flex</h1>
-                <div class="row">
-                <div class="card">
-                    <p>Picture and a H2 and text and text</p>
-                </div>
-                <div class="card">
-                    <p>Picture and a H2 and text</p>
-                </div>
-                <div class="card">
+  <header>
+    <h1>Colorado Tour</h1>
+    <nav class="nav">
+      <a href="#">Home</a><a href="#">Destinations</a><a href="#">Trails</a><a href="#">Gallery</a><a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <aside class="side">
+      <h2>Sidebar</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Phasellus vel dui in justo ultrices facilisis.</p>
+    </aside>
+
+    <main>
+      <h2>Profile Cards</h2>
+      <section class="cards">
+        <article class="card">
+          <img src="Loveland.jpeg" alt="Loveland" />
+          <h3>Loveland</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </article>
+        <article class="card">
+          <img src="Aspen.png" alt="Aspen" />
+          <h3>Aspen</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </article>
+        <article class="card">
+          <img src="rocky_speedbyai.jpeg" alt="Rocky Mountain" />
+          <h3>Rocky Mountain NP</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </article>
+        <article class="card">
+          <img src="Estes Park.jpeg" alt="Estes Park" />
+          <h3>Estes Park</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </article>
+        <article class="card">
+          <img src="denver.png" alt="Denver" />
+          <h3>Denver</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <nav class="foot">
+      <a href="#">About</a><a href="#">Careers</a><a href="#">Press</a><a href="#">Partners</a><a href="#">Developers</a>
+      <a href="#">Docs</a><a href="#">API</a><a href="#">Status</a><a href="#">Privacy</a><a href="#">Terms</a>
+      <a href="#">Support</a><a href="#">Contact</a><a href="#">Blog</a><a href="#">Guides</a><a href="#">Community</a>
+      <a href="#">Events</a><a href="#">Newsletter</a><a href="#">Sitemap</a><a href="#">Accessibility</a><a href="#">Cookies</a>
+    </nav>
+  </footer>
 </body>
 </html>
