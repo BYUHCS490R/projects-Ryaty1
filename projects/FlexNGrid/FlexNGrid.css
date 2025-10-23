@@ -1,110 +1,140 @@
 /* General Page Setup */
-body {
+* {
+  box-sizing: border-box;
+}
+html, body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f7f7;
+  color: #222;
   line-height: 1.5;
 }
 
-/* Header */
+/* ===== HEADER & NAV ===== */
 header {
-  background-color: #004d40;
+  background-color: #004d40;   /* dark green */
   color: white;
   padding: 1rem;
   text-align: center;
 }
 
-/* NAV Bar (Flex) */
+header h1 {
+  margin: 0 0 0.6rem;
+}
+
 .nav {
   display: flex;
   justify-content: space-evenly;
-  background-color: #00695c;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background-color: #00695c;   /* slightly lighter green */
   padding: 0.5rem 0;
 }
 
 .nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  background: #00796b;
   color: white;
   text-decoration: none;
-  display: block; /* required for flex layout */
-  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
 }
 
 .nav a:hover {
-  background-color: #004d40;
+  background: #004d40;
 }
 
-/* Wrapper: Sidebar + Main using Flex */
+/* ===== LAYOUT (Sidebar + Main) ===== */
 .wrap {
-  display: flex;
-  min-height: 80vh;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 1rem;
+  padding: 1rem;
 }
 
-/* Sidebar (ASIDE) */
+@media (max-width: 800px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
 .side {
-  background-color: #f5f5f5;
-  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
   padding: 1rem;
-  box-sizing: border-box;
-  border-right: 2px solid #ccc;
+  border-radius: 0.5rem;
 }
 
-/* MAIN Content Area */
-main {
-  flex: 3;
-  padding: 1rem;
-  background-color: #fafafa;
-  box-sizing: border-box;
+/* ===== PROFILE CARDS ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards in first row, 2 in second */
+  gap: 1rem;
 }
 
-/* Profile Cards using Flex/Grid */
-.card img {
-  width: 200px;           /* keep all images same width */
-  height: 200px;          /* make height consistent */
-  object-fit: cover;      /* crop to fill without distortion */
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto 1rem;    /* center and add space below */
+@media (max-width: 1100px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
+@media (max-width: 640px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
 
 .card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.5rem;
+  overflow: hidden;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .card img {
-  width: 100%;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 0.5rem;
 }
 
-/* Footer with 5x4 Grid */
+.card h3 {
+  margin: 0.6rem 0 0.2rem;
+}
+
+.card p {
+  margin: 0 0 0.8rem;
+}
+
+/* ===== FOOTER ===== */
 footer {
   background-color: #004d40;
   color: white;
   padding: 1rem;
+  margin-top: 1rem;
 }
 
 .foot {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: auto;
   gap: 0.5rem;
 }
 
 .foot a {
-  display: block; /* required for grid layout */
+  display: block;
+  padding: 0.5rem;
+  background: #00796b;
   color: white;
   text-decoration: none;
+  border-radius: 0.4rem;
   text-align: center;
-  padding: 0.25rem;
-  border-radius: 5px;
 }
 
 .foot a:hover {
-  background-color: #00796b;
+  background-color: #00695c;
 }
