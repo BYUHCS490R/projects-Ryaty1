@@ -1,19 +1,17 @@
-/* General Page Setup */
-* {
-  box-sizing: border-box;
-}
-html, body {
-  margin: 0;
-  padding: 0;
-}
+
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #f7f7f7;
   color: #222;
   line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
 }
 
-/* ===== HEADER & NAV ===== */
+
 header {
   background-color: #004d40;   /* dark green */
   color: white;
