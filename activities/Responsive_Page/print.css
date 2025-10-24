@@ -17,9 +17,7 @@ nav a:hover {
     color: blue;
 }
 nav {
-    display: flex;
-    justify-content: space-between;
-    background-color: blue;
+    display: none;
 }
 .main-row {
     display: flex;
