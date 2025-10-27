@@ -55,4 +55,35 @@ main h2 {
     font-size: 15px;
 }
 
+/* 
+@media ONLY print {
+    
+}
+*/
 
+@media ONLY screen AND (max-width: 500px) {
+    nav {
+        flex-direction: column;
+    }
+    .main-row {
+        flex-direction: column;
+    }
+    /*
+    .sidebar {
+        display: none;
+    }
+        */
+    .card {
+        width: 100%;
+    }
+    .sidebar {
+        width: 100%;
+    }
+    .main-card {
+        order: -1;
+    }
+    .QnA {
+        width: 100%;
+    }
+
+}
