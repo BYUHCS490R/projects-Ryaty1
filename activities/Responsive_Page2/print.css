@@ -1,0 +1,46 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+header h1 {
+    margin: 0;
+}
+nav a {
+    display: block;
+    padding: 15 px;
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+}
+
+nav a:hover {
+    background-color: white;
+    color: blue;
+}
+nav {
+    display: none;
+}
+.main-row {
+    display: flex;
+}
+main h2 {
+    margin: 0;
+}
+.sidebar h3 {
+    margin: 0;
+}
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.card {
+    width: 30%
+}
+.card img {
+    width: 100%;
+}
+.sidebar {
+    width: 200px;
+}
+
+

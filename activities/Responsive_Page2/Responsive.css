@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+header h1 {
+    margin: 0;
+}
+nav a {
+    display: block;
+    padding: 15 px;
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+}
+
+nav a:hover {
+    background-color: white;
+    color: blue;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: blue;
+}
+.main-row {
+    display: flex;
+}
+main h2 {
+    margin: 0;
+}
+.sidebar h3 {
+    margin: 0;
+}
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.card {
+    width: 30%;
+    border: thin solid black;
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow: 5px 5px 3px rgb(139, 136, 136);
+  
+}
+.card img {
+    width: 100%;
+}
+.sidebar {
+    width: 200px;
+}
+.QnA {
+    width: 200px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+
+
