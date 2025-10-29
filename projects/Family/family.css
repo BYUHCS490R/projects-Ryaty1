@@ -1,0 +1,9 @@
+@media ONLY screen AND (max-width: 480px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+@media ONLY print {
+    
+}
