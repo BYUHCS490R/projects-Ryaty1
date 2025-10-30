@@ -1,19 +1,22 @@
-@page {
-  size: auto;
-  margin: 0.6in;
-}
+/* Printer-friendly version (no @page rule) */
 
 html, body {
   color: #000;
   background: #fff !important;
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1.4;
+  margin: 0.6in; /* simple margin without @page */
 }
 
-nav, .primary-nav, .nav, .site-footer {
+/* Hide navigation and footer */
+nav,
+.primary-nav,
+.nav,
+.site-footer {
   display: none !important;
 }
 
+/* Make layout single column */
 .layout {
   display: block !important;
   padding: 0 !important;
@@ -21,6 +24,7 @@ nav, .primary-nav, .nav, .site-footer {
   margin: 0 !important;
 }
 
+/* Simplify sidebar */
 .sidebar {
   display: block !important;
   background: none !important;
@@ -29,7 +33,10 @@ nav, .primary-nav, .nav, .site-footer {
   padding: 0 0 0.5rem 0 !important;
 }
 
-.card, .card-media, .card-body {
+/* Simplify cards */
+.card,
+.card-media,
+.card-body {
   background: none !important;
   border: 0 !important;
   box-shadow: none !important;
@@ -37,21 +44,27 @@ nav, .primary-nav, .nav, .site-footer {
   padding: 0 !important;
 }
 
-.card-media img, .sidebar-media img {
+/* Image styles */
+.card-media img,
+.sidebar-media img {
   width: 100% !important;
   height: auto !important;
 }
 
-.card-media .caption, .sidebar .caption {
+/* Captions and text colors */
+.card-media .caption,
+.sidebar .caption {
   color: #000 !important;
   padding: 0 !important;
   margin-top: 0.2rem !important;
 }
 
+/* Text and lists */
 h1, h2, h3, p, li {
   color: #000 !important;
 }
 
+/* Prevent image splitting */
 img {
   page-break-inside: avoid;
   break-inside: avoid;
