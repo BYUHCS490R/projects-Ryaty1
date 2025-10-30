@@ -1,227 +1,186 @@
-:root {
-  --bg: #0f172a;          /* slate-900 */
-  --panel: #111827;       /* gray-900 */
-  --panel-2: #0b1220;     /* deep tint */
-  --text: #e5e7eb;        /* gray-200 */
-  --muted: #94a3b8;       /* slate-400 */
-  --brand: #38bdf8;       /* sky-400 */
-  --brand-2: #22d3ee;     /* cyan-400 */
-  --accent: #60a5fa;      /* blue-400 */
-  --card: #0a0f1c;
-  --radius: 14px;
-  --shadow: 0 10px 30px rgba(0,0,0,.35);
-}
+/* Main CSS (no CSS variables, no pseudo-element universal selectors, no aspect-ratio, no transforms/transitions/z-index/overflow) */
 
-*,
-*::before,
-*::after { box-sizing: border-box; }
-
-html, body { height: 100%; }
-
-body {
+/* Basic reset */
+html, body {
   margin: 0;
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji";
-  color: var(--text);
-  background: radial-gradient(1200px 800px at 10% -10%, rgba(56,189,248,.06), transparent 60%),
-              radial-gradient(800px 600px at 110% 10%, rgba(34,211,238,.06), transparent 60%),
-              radial-gradient(1000px 800px at 50% 120%, rgba(96,165,250,.06), transparent 60%),
-              var(--bg);
-  line-height: 1.6;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  color: #e5e7eb; /* light text on dark bg */
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(56,189,248,0.06), transparent 60%),
+              radial-gradient(800px 600px at 110% 10%, rgba(34,211,238,0.06), transparent 60%),
+              radial-gradient(1000px 800px at 50% 120%, rgba(96,165,250,0.06), transparent 60%),
+              #0f172a; /* dark background */
 }
 
-/* Header and Nav */
+/* Header and nav */
 .site-header {
   padding: 1rem clamp(1rem, 4vw, 2rem);
-  position: sticky;
-  top: 0;
-  z-index: 10;
   background:
-    linear-gradient(180deg, rgba(10,15,28,.75), rgba(10,15,28,.35) 70%, transparent),
-    linear-gradient(90deg, rgba(56,189,248,.25), rgba(34,211,238,.25));
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(148,163,184,.15);
+    linear-gradient(180deg, rgba(10,15,28,0.75), rgba(10,15,28,0.35) 70%, transparent),
+    linear-gradient(90deg, rgba(56,189,248,0.15), rgba(34,211,238,0.12));
+  border-bottom: 1px solid rgba(148,163,184,0.15);
 }
 
 .site-header h1 {
-  margin: 0 0 .5rem 0;
+  margin: 0 0 0.5rem 0;
   font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 700;
-  letter-spacing: .5px;
+  color: #ffffff;
 }
 
+/* Nav list: flexbox */
 .nav {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  gap: .75rem;
-  justify-content: space-between; /* even horizontal spacing */
+  gap: 0.75rem;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .nav a {
   display: block;
-  padding: .5rem .85rem;
-  color: var(--text);
+  padding: 0.5rem 0.85rem;
+  color: #e5e7eb;
   text-decoration: none;
-  background: linear-gradient(180deg, rgba(255,255,255,.04), transparent);
-  border: 1px solid rgba(148,163,184,.18);
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
+  border: 1px solid rgba(148,163,184,0.12);
   border-radius: 999px;
-  transition: transform .15s ease, background .2s ease, border-color .2s ease, color .2s ease;
 }
 
-.nav a:hover,
-.nav a:focus-visible {
-  color: white;
-  background: linear-gradient(180deg, rgba(56,189,248,.18), rgba(34,211,238,.1));
-  border-color: rgba(56,189,248,.45);
-  transform: translateY(-1px);
+.nav a:focus {
+  outline: 3px solid #38bdf8;
+  outline-offset: 2px;
 }
 
-/* Layout: sidebar + main in a row on wide screens */
+/* Overall layout: flex container that contains sidebar + main.
+   On wide screens, sidebar width is about 28% (min 240px), main grows. */
 .layout {
-  display: grid;
-  grid-template-columns: 1fr; /* mobile default */
+  display: flex;
   gap: clamp(1rem, 2.5vw, 1.5rem);
   padding: clamp(1rem, 4vw, 2rem);
   max-width: 1200px;
   margin: 0 auto;
+  align-items: flex-start;
 }
 
-@media (min-width: 900px) {
-  .layout {
-    grid-template-columns: minmax(240px, 28%) 1fr; /* 20–30% sidebar */
-    align-items: start;
-  }
-}
-
-/* Sidebar */
+/* Sidebar (normal div, not aside) */
 .sidebar {
-  background: linear-gradient(180deg, var(--panel), var(--panel-2));
-  border: 1px solid rgba(148,163,184,.14);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  flex: 0 0 28%;
+  min-width: 240px;
+  background: linear-gradient(180deg, #0a0f1c, #0b1220);
+  border: 1px solid rgba(148,163,184,0.12);
+  border-radius: 14px;
   padding: 1rem;
-  position: sticky;
-  top: 84px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
-.sidebar-figure {
-  margin: 0 0 .75rem 0;
-  background: linear-gradient(180deg, rgba(96,165,250,.12), transparent 60%);
-  border-radius: calc(var(--radius) - 6px);
-  padding: .5rem;
-  border: 1px solid rgba(96,165,250,.25);
-}
-
-.sidebar-figure img {
+/* Sidebar media (image + caption as simple elements; no <figure>) */
+.sidebar-media img {
   width: 100%;
-  height: auto;
+  height: auto;     /* ensures full image shown, not cropped */
   display: block;
   border-radius: 10px;
+  margin-bottom: 0.5rem;
 }
 
-.sidebar-figure figcaption {
-  font-size: .85rem;
-  color: var(--muted);
-  margin-top: .35rem;
+.sidebar .caption {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
 }
 
+/* Sidebar title & facts */
 .sidebar-title {
-  margin: .25rem 0 .5rem;
+  margin: 0.25rem 0 0.5rem 0;
   font-size: 1rem;
-  color: white;
+  color: #ffffff;
 }
 
 .facts {
   margin: 0;
   padding-left: 1.1rem;
+  color: #e5e7eb;
 }
 
 .facts li {
-  margin: .35rem 0;
+  margin: 0.35rem 0;
 }
 
-/* Cards */
+/* Main content occupies remaining space */
 #main-content {
+  flex: 1 1 0%;
   min-width: 0;
 }
 
+/* Card base style */
 .card {
-  background: linear-gradient(180deg, var(--card), rgba(10,15,28,.85));
-  border: 1px solid rgba(148,163,184,.14);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
+  background: linear-gradient(180deg, #0a0f1c, rgba(10,15,28,0.85));
+  border: 1px solid rgba(148,163,184,0.12);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  margin-bottom: 1rem;
+  overflow: visible; /* not using overflow:hidden */
 }
 
-.card-media {
-  margin: 0;
-  position: relative;
-  aspect-ratio: 16/9;
-  background: rgba(148,163,184,.1);
-}
-
+/* Card media: image + caption (no figure/figcaption) */
 .card-media img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;      /* ensure full image visible */
   display: block;
 }
 
-.card-media figcaption {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  padding: .5rem .75rem;
-  font-size: .9rem;
-  color: white;
-  background: linear-gradient(180deg, transparent, rgba(0,0,0,.6));
-  width: 100%;
-  box-sizing: border-box;
+.card-media .caption {
+  margin: 0.35rem 0 0 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
 }
 
+/* Card body */
 .card-body {
-  padding: 1rem 1rem 1.1rem;
+  padding: 1rem;
 }
 
 .card-body h2,
 .card-body h3 {
-  margin: .25rem 0 .5rem;
+  margin: 0.25rem 0 0.5rem 0;
   font-size: clamp(1.1rem, 1.8vw, 1.3rem);
-  color: white;
+  color: #ffffff;
 }
 
 .card-body p {
-  margin: .5rem 0;
-  color: var(--text);
+  margin: 0.5rem 0;
+  color: #e5e7eb;
 }
 
-/* Banner card (occupies row equal to three small cards) */
-.card-banner .card-media { aspect-ratio: 21/9; }
-.card-banner .card-body h2 { font-size: clamp(1.25rem, 2.2vw, 1.5rem); }
+/* Banner card uses same structure but slightly larger padding */
+.card-banner .card-body h2 {
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+}
 
-/* Grid for the three equal cards */
+/* Card grid implemented with flexbox so cards can wrap on smaller screens */
 .card-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
   gap: clamp(1rem, 2.5vw, 1.25rem);
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
-@media (min-width: 700px) {
-  .card-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+/* Each card inside card-grid: allow them to grow and wrap.
+   On wide screens we want 3 across; we use flex-basis to approximate that. */
+.card-grid .card {
+  flex: 1 1 300px; /* will try to make each card at least 300px; wrap if not enough room */
 }
 
-/* On wide screens, keep banner above the three cards and allow wrap */
-@media (min-width: 900px) {
-  #main-content {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+/* Spacing for banner (put above card-grid naturally) */
+.card-banner {
+  margin-bottom: 1rem;
 }
 
 /* Footer */
@@ -229,39 +188,46 @@ body {
   margin-top: 1.5rem;
   padding: 1.25rem clamp(1rem, 4vw, 2rem);
   text-align: center;
-  color: var(--muted);
-  border-top: 1px solid rgba(148,163,184,.14);
-  background: linear-gradient(180deg, rgba(255,255,255,.02), transparent);
+  color: #94a3b8;
+  border-top: 1px solid rgba(148,163,184,0.14);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
 }
 
-/* Accessibility & small enhancements */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--brand);
+/* Accessibility focus */
+a:focus {
+  outline: 3px solid #38bdf8;
   outline-offset: 2px;
 }
 
-/* Mobile adjustments (<= 700px) */
+/* Responsive / Mobile: <= 700px
+   - nav becomes vertical
+   - sidebar hidden
+   - cards stack (flex-wrap ensures they wrap)
+*/
 @media (max-width: 700px) {
   .nav {
-    flex-direction: column;         /* horizontal to vertical */
+    flex-direction: column;
     align-items: stretch;
-    gap: .5rem;
+    gap: 0.5rem;
   }
-  .sidebar {
-    position: static;
-    top: auto;
-  }
-  /* Sidebar drops below news: switch order using source structure + grid columns = 1fr, so it naturally stacks.
-     To force sidebar below, we can reorder at mobile by placing main first visually: */
-  .layout {
-    display: grid;
-    grid-template-areas:
-      "main"
-      "aside";
-  }
-  .sidebar { grid-area: aside; }
-  #main-content { grid-area: main; }
 
-  .card-media { aspect-ratio: 4/3; } /* taller images look nicer on mobile */
+  .sidebar {
+    display: none; /* remove sidebar content on small screens as requested */
+  }
+
+  .layout {
+    padding: 1rem;
+  }
+
+  /* Make cards stack nicely: give them full width */
+  .card-grid .card {
+    flex: 1 1 100%;
+  }
+}
+
+/* Ensure printable-friendly fallback for images (kept minimal here; print file will override more) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }

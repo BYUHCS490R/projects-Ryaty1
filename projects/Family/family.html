@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Johnson Family</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="family.css" rel="stylesheet">
-  <link href="familyprint.css" rel="stylesheet" media="print">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="family.css" rel="stylesheet" />
+  <link href="familyprint.css" rel="stylesheet" media="print" />
 </head>
 <body>
   <header class="site-header">
     <h1>Johnson Family</h1>
-    <nav aria-label="Primary">
+
+    <nav aria-label="Primary" class="primary-nav">
       <ul class="nav">
         <li><a href="#">Home</a></li>
         <li><a href="#">Photos</a></li>
@@ -22,11 +23,12 @@
   </header>
 
   <div class="layout">
-    <aside class="sidebar">
-      <figure class="sidebar-figure">
-        <img src="Sidebarpic.png" alt="Small Johnson family snapshot">
-        <figcaption>Johnson Family, Fort Collins</figcaption>
-      </figure>
+    <!-- Sidebar is plain div (not <aside>). Hidden on small screens by CSS. -->
+    <div class="sidebar">
+      <div class="sidebar-media">
+        <img src="Sidebarpic.png" alt="Small Johnson family snapshot" />
+        <p class="caption">Johnson Family, Fort Collins</p>
+      </div>
 
       <h2 class="sidebar-title">About Our Family</h2>
       <ul class="facts">
@@ -41,15 +43,15 @@
         <li>Tradition: Sunday breakfast together</li>
         <li>They believe family time is the best time</li>
       </ul>
-    </aside>
+    </div>
 
     <main id="main-content">
-      <!-- Banner card spans width equal to the three small cards -->
+      <!-- Banner article -->
       <article class="card card-banner">
-        <figure class="card-media">
-          <img src="Jonhson Family.png" alt="Johnson family group photo">
-          <figcaption>Johnson Family</figcaption>
-        </figure>
+        <div class="card-media">
+          <img src="Jonhson Family.png" alt="Johnson family group photo" />
+          <p class="caption">Johnson Family</p>
+        </div>
         <div class="card-body">
           <h2>Johnson Family</h2>
           <p>The Johnson family lives in a friendly neighborhood in <strong>Fort Collins, Colorado</strong>, where the air feels fresh and the mountains are not too far away. In their family photo, <strong>Emily</strong> stands on the far left next to her dad, <strong>David</strong>, then comes <strong>Sarah</strong>, followed by <strong>Chloe</strong>, and finally <strong>Ethan</strong> on the far right with his big smile. They are a warm and close family who enjoy hiking, movie nights, and spending time in their backyard.</p>
@@ -57,13 +59,13 @@
         </div>
       </article>
 
-      <!-- Three equal cards in a row on wide screens -->
-      <section class="card-grid" aria-label="Family News">
+      <!-- Card grid implemented with flexbox (not <section>) -->
+      <div class="card-grid" aria-label="Family News">
         <article class="card">
-          <figure class="card-media">
-            <img src="Parents.png" alt="David and Sarah smiling together">
-            <figcaption>David and Sarah Johnson</figcaption>
-          </figure>
+          <div class="card-media">
+            <img src="Parents.png" alt="David and Sarah smiling together" />
+            <p class="caption">David and Sarah Johnson</p>
+          </div>
           <div class="card-body">
             <h3>David and Sarah Johnson</h3>
             <p>David and Sarah met when they were both students at Colorado State University. He studied engineering, and she studied art education. After they graduated, they got married and moved to Fort Collins to start a new chapter together.</p>
@@ -73,10 +75,10 @@
         </article>
 
         <article class="card">
-          <figure class="card-media">
-            <img src="Emily.png" alt="Emily standing by a river trail">
-            <figcaption>Emily Johnson</figcaption>
-          </figure>
+          <div class="card-media">
+            <img src="Emily.png" alt="Emily standing by a river trail" />
+            <p class="caption">Emily Johnson</p>
+          </div>
           <div class="card-body">
             <h3>Emily Johnson</h3>
             <p><strong>Emily</strong>, who is <strong>23 years old</strong>, is the oldest child in the Johnson family. She finished college with a degree in environmental science and now works for a group that protects rivers and nature in Colorado. Emily loves being outdoors and often goes hiking or biking with her family.</p>
@@ -85,17 +87,17 @@
         </article>
 
         <article class="card">
-          <figure class="card-media">
-            <img src="Cloe.png" alt="Chloe holding a camera">
-            <figcaption>Chloe Johnson</figcaption>
-          </figure>
+          <div class="card-media">
+            <img src="Cloe.png" alt="Chloe holding a camera" />
+            <p class="caption">Chloe Johnson</p>
+          </div>
           <div class="card-body">
             <h3>Chloe Johnson</h3>
             <p><strong>Chloe</strong>, the second daughter, is <strong>20 years old</strong> and full of creativity. She studies film and media at the University of Colorado and likes making short videos about family life. Chloe has a bright and fun personality — she always makes people laugh and brings good energy to the house.</p>
             <p>On weekends, she helps her mom at the art studio and often comes up with new ideas for projects. She's close with her younger brother Ethan, and they love listening to music together. Chloe dreams of one day making her own documentary about small-town life in Colorado.</p>
           </div>
         </article>
-      </section>
+      </div>
     </main>
   </div>
 
