@@ -1,9 +1,267 @@
-@media ONLY screen AND (max-width: 480px) {
-    body {
-        background-color: lightblue;
-    }
+:root {
+  --bg: #0f172a;          /* slate-900 */
+  --panel: #111827;       /* gray-900 */
+  --panel-2: #0b1220;     /* deep tint */
+  --text: #e5e7eb;        /* gray-200 */
+  --muted: #94a3b8;       /* slate-400 */
+  --brand: #38bdf8;       /* sky-400 */
+  --brand-2: #22d3ee;     /* cyan-400 */
+  --accent: #60a5fa;      /* blue-400 */
+  --card: #0a0f1c;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
 }
 
-@media ONLY print {
-    
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(56,189,248,.06), transparent 60%),
+              radial-gradient(800px 600px at 110% 10%, rgba(34,211,238,.06), transparent 60%),
+              radial-gradient(1000px 800px at 50% 120%, rgba(96,165,250,.06), transparent 60%),
+              var(--bg);
+  line-height: 1.6;
+}
+
+/* Header and Nav */
+.site-header {
+  padding: 1rem clamp(1rem, 4vw, 2rem);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background:
+    linear-gradient(180deg, rgba(10,15,28,.75), rgba(10,15,28,.35) 70%, transparent),
+    linear-gradient(90deg, rgba(56,189,248,.25), rgba(34,211,238,.25));
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(148,163,184,.15);
+}
+
+.site-header h1 {
+  margin: 0 0 .5rem 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: .75rem;
+  justify-content: space-between; /* even horizontal spacing */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  display: block;
+  padding: .5rem .85rem;
+  color: var(--text);
+  text-decoration: none;
+  background: linear-gradient(180deg, rgba(255,255,255,.04), transparent);
+  border: 1px solid rgba(148,163,184,.18);
+  border-radius: 999px;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease, color .2s ease;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: white;
+  background: linear-gradient(180deg, rgba(56,189,248,.18), rgba(34,211,238,.1));
+  border-color: rgba(56,189,248,.45);
+  transform: translateY(-1px);
+}
+
+/* Layout: sidebar + main in a row on wide screens */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile default */
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  padding: clamp(1rem, 4vw, 2rem);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(240px, 28%) 1fr; /* 20–30% sidebar */
+    align-items: start;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid rgba(148,163,184,.14);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  position: sticky;
+  top: 84px;
+}
+
+.sidebar-figure {
+  margin: 0 0 .75rem 0;
+  background: linear-gradient(180deg, rgba(96,165,250,.12), transparent 60%);
+  border-radius: calc(var(--radius) - 6px);
+  padding: .5rem;
+  border: 1px solid rgba(96,165,250,.25);
+}
+
+.sidebar-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.sidebar-figure figcaption {
+  font-size: .85rem;
+  color: var(--muted);
+  margin-top: .35rem;
+}
+
+.sidebar-title {
+  margin: .25rem 0 .5rem;
+  font-size: 1rem;
+  color: white;
+}
+
+.facts {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.facts li {
+  margin: .35rem 0;
+}
+
+/* Cards */
+#main-content {
+  min-width: 0;
+}
+
+.card {
+  background: linear-gradient(180deg, var(--card), rgba(10,15,28,.85));
+  border: 1px solid rgba(148,163,184,.14);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.card-media {
+  margin: 0;
+  position: relative;
+  aspect-ratio: 16/9;
+  background: rgba(148,163,184,.1);
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-media figcaption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: .5rem .75rem;
+  font-size: .9rem;
+  color: white;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.6));
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-body {
+  padding: 1rem 1rem 1.1rem;
+}
+
+.card-body h2,
+.card-body h3 {
+  margin: .25rem 0 .5rem;
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  color: white;
+}
+
+.card-body p {
+  margin: .5rem 0;
+  color: var(--text);
+}
+
+/* Banner card (occupies row equal to three small cards) */
+.card-banner .card-media { aspect-ratio: 21/9; }
+.card-banner .card-body h2 { font-size: clamp(1.25rem, 2.2vw, 1.5rem); }
+
+/* Grid for the three equal cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 2.5vw, 1.25rem);
+  margin-top: 1rem;
+}
+
+@media (min-width: 700px) {
+  .card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* On wide screens, keep banner above the three cards and allow wrap */
+@media (min-width: 900px) {
+  #main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 1.5rem;
+  padding: 1.25rem clamp(1rem, 4vw, 2rem);
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid rgba(148,163,184,.14);
+  background: linear-gradient(180deg, rgba(255,255,255,.02), transparent);
+}
+
+/* Accessibility & small enhancements */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* Mobile adjustments (<= 700px) */
+@media (max-width: 700px) {
+  .nav {
+    flex-direction: column;         /* horizontal to vertical */
+    align-items: stretch;
+    gap: .5rem;
+  }
+  .sidebar {
+    position: static;
+    top: auto;
+  }
+  /* Sidebar drops below news: switch order using source structure + grid columns = 1fr, so it naturally stacks.
+     To force sidebar below, we can reorder at mobile by placing main first visually: */
+  .layout {
+    display: grid;
+    grid-template-areas:
+      "main"
+      "aside";
+  }
+  .sidebar { grid-area: aside; }
+  #main-content { grid-area: main; }
+
+  .card-media { aspect-ratio: 4/3; } /* taller images look nicer on mobile */
 }
