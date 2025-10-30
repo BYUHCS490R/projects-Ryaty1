@@ -1,20 +1,17 @@
-/* Main CSS (no CSS variables, no pseudo-element universal selectors, no aspect-ratio, no transforms/transitions/z-index/overflow) */
-
-/* Basic reset */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.5;
-  color: #e5e7eb; /* light text on dark bg */
+  color: #e5e7eb;
   background: radial-gradient(1200px 800px at 10% -10%, rgba(56,189,248,0.06), transparent 60%),
               radial-gradient(800px 600px at 110% 10%, rgba(34,211,238,0.06), transparent 60%),
               radial-gradient(1000px 800px at 50% 120%, rgba(96,165,250,0.06), transparent 60%),
-              #0f172a; /* dark background */
+              #0f172a;
 }
 
-/* Header and nav */
+/* Header and Nav */
 .site-header {
   padding: 1rem clamp(1rem, 4vw, 2rem);
   background:
@@ -30,7 +27,7 @@ html, body {
   color: #ffffff;
 }
 
-/* Nav list: flexbox */
+/* Nav */
 .nav {
   list-style: none;
   margin: 0;
@@ -57,8 +54,7 @@ html, body {
   outline-offset: 2px;
 }
 
-/* Overall layout: flex container that contains sidebar + main.
-   On wide screens, sidebar width is about 28% (min 240px), main grows. */
+/* Layout */
 .layout {
   display: flex;
   gap: clamp(1rem, 2.5vw, 1.5rem);
@@ -68,7 +64,7 @@ html, body {
   align-items: flex-start;
 }
 
-/* Sidebar (normal div, not aside) */
+/* Sidebar */
 .sidebar {
   flex: 0 0 28%;
   min-width: 240px;
@@ -79,10 +75,9 @@ html, body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
-/* Sidebar media (image + caption as simple elements; no <figure>) */
 .sidebar-media img {
   width: 100%;
-  height: auto;     /* ensures full image shown, not cropped */
+  height: auto;
   display: block;
   border-radius: 10px;
   margin-bottom: 0.5rem;
@@ -94,7 +89,6 @@ html, body {
   color: #94a3b8;
 }
 
-/* Sidebar title & facts */
 .sidebar-title {
   margin: 0.25rem 0 0.5rem 0;
   font-size: 1rem;
@@ -104,33 +98,30 @@ html, body {
 .facts {
   margin: 0;
   padding-left: 1.1rem;
-  color: #e5e7eb;
 }
 
 .facts li {
   margin: 0.35rem 0;
 }
 
-/* Main content occupies remaining space */
+/* Main content */
 #main-content {
   flex: 1 1 0%;
   min-width: 0;
 }
 
-/* Card base style */
+/* Card */
 .card {
   background: linear-gradient(180deg, #0a0f1c, rgba(10,15,28,0.85));
   border: 1px solid rgba(148,163,184,0.12);
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
   margin-bottom: 1rem;
-  overflow: visible; /* not using overflow:hidden */
 }
 
-/* Card media: image + caption (no figure/figcaption) */
 .card-media img {
   width: 100%;
-  height: auto;      /* ensure full image visible */
+  height: auto;
   display: block;
 }
 
@@ -142,7 +133,6 @@ html, body {
   background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
 }
 
-/* Card body */
 .card-body {
   padding: 1rem;
 }
@@ -159,12 +149,10 @@ html, body {
   color: #e5e7eb;
 }
 
-/* Banner card uses same structure but slightly larger padding */
 .card-banner .card-body h2 {
   font-size: clamp(1.25rem, 2.2vw, 1.5rem);
 }
 
-/* Card grid implemented with flexbox so cards can wrap on smaller screens */
 .card-grid {
   display: flex;
   gap: clamp(1rem, 2.5vw, 1.25rem);
@@ -172,15 +160,8 @@ html, body {
   flex-wrap: wrap;
 }
 
-/* Each card inside card-grid: allow them to grow and wrap.
-   On wide screens we want 3 across; we use flex-basis to approximate that. */
 .card-grid .card {
-  flex: 1 1 300px; /* will try to make each card at least 300px; wrap if not enough room */
-}
-
-/* Spacing for banner (put above card-grid naturally) */
-.card-banner {
-  margin-bottom: 1rem;
+  flex: 1 1 300px;
 }
 
 /* Footer */
@@ -193,39 +174,24 @@ html, body {
   background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
 }
 
-/* Accessibility focus */
-a:focus {
-  outline: 3px solid #38bdf8;
-  outline-offset: 2px;
-}
-
-/* Responsive / Mobile: <= 700px
-   - nav becomes vertical
-   - sidebar hidden
-   - cards stack (flex-wrap ensures they wrap)
-*/
+/* Responsive */
 @media (max-width: 700px) {
   .nav {
     flex-direction: column;
     align-items: stretch;
     gap: 0.5rem;
   }
-
   .sidebar {
-    display: none; /* remove sidebar content on small screens as requested */
+    display: none;
   }
-
   .layout {
     padding: 1rem;
   }
-
-  /* Make cards stack nicely: give them full width */
   .card-grid .card {
     flex: 1 1 100%;
   }
 }
 
-/* Ensure printable-friendly fallback for images (kept minimal here; print file will override more) */
 img {
   max-width: 100%;
   height: auto;
