@@ -167,6 +167,23 @@ html, body {
   background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
 }
 
+.nav a:hover {
+  color: #ffffff;
+  background: linear-gradient(180deg, rgba(56,189,248,0.25), rgba(34,211,238,0.15));
+  border-color: rgba(56,189,248,0.45);
+}
+
+.card:hover {
+  background: linear-gradient(180deg, rgba(56,189,248,0.08), rgba(10,15,28,0.9));
+  border-color: rgba(56,189,248,0.35);
+}
+
+.card:hover .card-body h3,
+.card:hover .card-body h2 {
+  color: #38bdf8;
+}
+
+
 @media (max-width: 700px) {
   .nav {
     flex-direction: column;
