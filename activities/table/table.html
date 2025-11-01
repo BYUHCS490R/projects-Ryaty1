@@ -9,22 +9,29 @@
 <body>
     <header>
         <h1>Kimchhay Web Design</h1>
+        <nav>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        </nav>
+    </header>
     <main>
         <table class="schedule">
             <thead>
                 <tr>
-                    <th>Dept.</th><th>Number</th><th>Time</th><th>Location</th><th>Credits</th>
+                    <th scope="col">Dept.</th><th scope="col">Number</th><th scope="col">Time</th><th scope="col">Location</th><th scope="col">Credits</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th colspan="5">Information Technology</th>
+                    <th colspan="5" scope="rowgroup">Information Technology</th>
                 </tr>
                 <tr>
                     <td>IT</td><td>240</td><td>11AM</td><td rowspan="2">P3</td><td>3</td>
                 </tr>
                 <tr>
-                    <th colspan="5">Computer Science</th>
+                    <th colspan="5" scope="rowgroup">Computer Science</th>
                 </tr>
                 <tr>
                     <td>CS</td><td>210</td><td>2PM</td><td>P1</td><td>3</td>
@@ -35,19 +42,25 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <th class="5" id="total-credits">Total Credits</th>
+                    <th scope="row" class="5" id="total-credits">Total Credits</th>
                     <td headers="total-credits">12</td>
                 </tr>
             </tfoot>
         </table>
         <h2> Answers the Questions</h2>
         <ol>
-            <li>When do you use a table?</li>
+            <li>
+                When do you use a table?
                 <p>You use a table when you want to display data in a tabular format.</p>
-            <li>When do you not use a table?
-                <p>You use a table when you want to display data in a tabular format.</li>
-            <li>When do you need to do extra work for table accessibility?
-                <p>You use a table when you want to display data in a tabular format.</li>
+            </li>
+            <li>
+                When do you not use a table?
+                <p>Do not use a table for page layout or non-tabular content; prefer semantic elements and CSS for layout.</p>
+            </li>
+            <li>
+                When do you need to do extra work for table accessibility?
+                <p>When a table is complex (merged cells, multi-level headers), add captions, proper scope/headers/id attributes, and consider summaries for screen readers.</p>
+            </li>
         </ol>
     </main>
     <footer>
