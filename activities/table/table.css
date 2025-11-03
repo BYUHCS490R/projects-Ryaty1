@@ -14,7 +14,7 @@ body {
     color: white;
 }
 
-.schedule tbody tr:nth-child(odd) {
+.schedule tbody tr:nth-child(even) {
     background-color: #BBB;
 }
 
