@@ -13,11 +13,6 @@ body {
     margin-right: auto;
 }
 
-.schedule th {
-    border: thin solid black;
-    padding: 5px;
-}
-
 .schedule thead {
     background-color: darkblue;
     color: white;
