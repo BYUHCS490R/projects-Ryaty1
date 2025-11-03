@@ -13,16 +13,19 @@ body {
     margin-right: auto;
 }
 
-.schedule thead {
+.schedule thead tr {
     background-color: darkblue;
     color: white;
 }
-
-.schedule tbody tr:nth-child(even) {
-    background-color: #BBB;
+.schedule tbody tr {
+    background-color: rgb(196, 236, 250);
 }
 
-.schedule tfoot {
+.schedule tbody tr:nth-child(even) {
+    background-color: #94a5f9;
+}
+
+.schedule tfoot tr {
     background-color: darkblue;
     color: white;
 }
