@@ -1,0 +1,31 @@
+@media print {
+  .site-header, .nav, .sidebar, .site-footer .resource-links{
+    display: none;
+  }
+
+  .main-content {
+    box-shadow: none;
+    border: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .crypto-table {
+    border: 1px solid black;
+  }
+
+  .crypto-table th, .crypto-table td {
+    border: 1px solid black;
+    padding: 6px;
+  }
+
+  caption {
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+}
