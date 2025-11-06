@@ -1,393 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>CSS File</title>
-</head>
-<body>
-<style>
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Reset + Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #333;
+  background: #f7f8fa;
+  line-height: 1.6;
 }
 
-/* Header Styles */
+/* Header */
 .site-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 1.5rem 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-
 .header-content {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-
 .logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    background-color: white;
-    padding: 5px;
+  width: 50px; height: 50px; border-radius: 8px; background: white; padding: 5px;
 }
-
-.site-header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-/* Navigation Styles */
 .nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
-
 .nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: opacity 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+  color: white; text-decoration: none; font-weight: 500;
+  padding: 0.5rem 1rem; border-radius: 5px;
+  transition: background 0.3s ease;
 }
+.nav a:hover { background: rgba(255,255,255,0.2); }
 
-.nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    opacity: 0.9;
-}
-
-/* Container with Flexbox Layout */
+/* Layout */
 .container {
-    max-width: 1400px;
-    margin: 2rem auto;
-    padding: 0 2rem;
-    display: flex;
-    gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 2rem;
 }
-
-/* Main Content */
 .main-content {
-    flex: 1;
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-
-/* Sidebar - Right Side */
 .sidebar {
-    width: 300px;
-    flex-shrink: 0;
+  width: 300px;
+  flex-shrink: 0;
 }
-
 .sidebar-card {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+.sidebar-card h3 { color: #667eea; margin-bottom: 0.5rem; }
+.tips { list-style: none; padding-left: 0; }
+.tips li { margin-bottom: 0.4rem; }
 
-.sidebar-card h3 {
-    color: #667eea;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-
-.sidebar-card.highlight {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-}
-
-.sidebar-card.highlight h3 {
-    color: white;
-}
-
-.indicator-list,
-.tips-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.indicator-list li,
-.tips-list li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.2rem;
-    position: relative;
-}
-
-.tips-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.5rem;
-    width: 6px;
-    height: 6px;
-    background-color: #667eea;
-    border-radius: 50%;
-}
-
-.featured-price {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 1rem 0;
-}
-
-.price-change {
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.price-change.positive {
-    color: #4ade80;
-}
-
-/* Section Styles */
-.intro-section {
-    margin-bottom: 2rem;
-}
-
-.intro-section h2 {
-    color: #667eea;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.intro-section p {
-    margin-bottom: 1rem;
-    color: #555;
-}
-
-.analysis-section {
-    margin-top: 2rem;
-}
-
-.analysis-section h3 {
-    color: #667eea;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.analysis-section p {
-    margin-bottom: 1rem;
-    color: #555;
-}
-
-/* Table Styles */
+/* Table */
 .crypto-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 2rem 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
 }
-
 .crypto-table caption {
-    caption-side: top;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #667eea;
-    margin-bottom: 1rem;
-    text-align: center;
+  font-weight: bold;
+  color: #667eea;
+  margin-bottom: 0.8rem;
+  text-align: center;
 }
-
 .crypto-table thead {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
 }
-
-.crypto-table thead th {
-    padding: 1rem;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
+.crypto-table th, .crypto-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
 }
+.crypto-table tbody tr:nth-child(even) { background: #f3f4f6; }
+.crypto-table tbody tr:hover { background: #e0e7ff; }
 
-.crypto-table tbody td {
-    padding: 0.9rem 1rem;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.crypto-table tbody tr {
-    background-color: #ffffff;
-    transition: background-color 0.2s ease;
-}
-
-.crypto-table tbody tr:nth-child(even) {
-    background-color: #f9fafb;
-}
-
-.crypto-table tbody tr:hover {
-    background-color: #e0e7ff;
-}
-
-.crypto-table tbody td:first-child {
-    font-weight: 600;
-    color: #667eea;
-}
-
-/* Resource Links Section */
-.resource-links {
-    margin-top: 2rem;
-}
-
-.resource-links h3 {
-    color: #667eea;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.links-grid {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.resource-card {
-    flex: 1;
-    min-width: 200px;
-    background-color: #f9fafb;
-    padding: 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    color: inherit;
-    border: 2px solid #e5e7eb;
-    transition: all 0.3s ease;
-}
-
-.resource-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
-    border-color: #667eea;
-}
-
-.resource-card h4 {
-    color: #667eea;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.resource-card p {
-    color: #666;
-    font-size: 0.9rem;
-}
-
-/* Footer Styles */
+/* Footer */
 .site-footer {
-    background-color: #1f2937;
-    color: #d1d5db;
-    padding: 3rem 2rem 1rem;
-    margin-top: 3rem;
+  background: #1f2937;
+  color: #d1d5db;
+  padding: 2rem 1.5rem;
+  margin-top: 3rem;
 }
-
 .footer-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    gap: 3rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 1rem;
 }
-
-.footer-section {
-    flex: 1;
-    min-width: 200px;
-}
-
-.footer-section h4 {
-    color: #f9fafb;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.footer-section p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-section a {
-    color: #9ca3af;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section a:hover {
-    color: #667eea;
-}
-
+.footer-content h4 { color: white; margin-bottom: 0.5rem; }
+.footer-content a { color: #9ca3af; text-decoration: none; }
+.footer-content a:hover { color: #667eea; }
 .footer-bottom {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding-top: 2rem;
-    border-top: 1px solid #374151;
-    text-align: center;
-    font-size: 0.85rem;
-    color: #9ca3af;
+  text-align: center;
+  font-size: 0.85rem;
+  border-top: 1px solid #374151;
+  padding-top: 1rem;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .container {
-        flex-direction: column;
-    }
-    
-    .sidebar {
-        width: 100%;
-    }
-    
-    .crypto-table {
-        font-size: 0.85rem;
-    }
-    
-    .crypto-table thead th,
-    .crypto-table tbody td {
-        padding: 0.6rem;
-    }
+/* ---------- Responsive Design ---------- */
+@media (max-width: 900px) {
+  .container { flex-direction: column; }
+  .sidebar { display: none; } /* Hide sidebar on phone */
+  .nav ul { flex-direction: column; align-items: flex-start; }
+  .nav a { display: block; width: 100%; }
+  .crypto-table { font-size: 0.85rem; }
+  .footer-content { flex-direction: column; gap: 1rem; }
 }
 
-@media (max-width: 768px) {
-    .nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .links-grid {
-        flex-direction: column;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .crypto-table {
-        font-size: 0.75rem;
-    }
+/* ---------- Print Styling ---------- */
+@media print {
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+  }
+  .site-header, .nav, .sidebar, .site-footer {
+    display: none; /* hide non-essential parts */
+  }
+  .main-content {
+    box-shadow: none;
+    border: none;
+  }
+  .crypto-table {
+    width: 100%;
+    border: 1px solid #000;
+  }
+  .crypto-table th, .crypto-table td {
+    border: 1px solid #000;
+    padding: 6px;
+  }
+  caption {
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
 }
-</style>
-</body>
-</html>
-url(../../../../../logo.ico) url(../../../../../logo.png)
