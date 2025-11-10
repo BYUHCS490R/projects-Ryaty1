@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-row, .chgeck-row{
+    margin: 15px 0;
+    display: flex;
+    gap  : 10px;
+}
+.form-row label {
+    width: 150px;
+    font-weight: bold;
+    text-align: right;
+}
+.spacer {
+    width: 150px;
+}
+fieldset {
+    border: 2px solid #000;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(237, 202, 26, 0.893);
+}
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+    background-color: rgb(146, 2, 159);
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}

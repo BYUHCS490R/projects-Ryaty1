@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
     <title>Forms</title>
 </head>
 <body>
@@ -12,53 +13,58 @@
     <main>
         <h1>Forms</h1>
         <form action="formprocess.html" method="post">
-            <div>
-            <label for="full-name">Full Name:</label>
-            <input type="text" name="" id="full-name" placeholder="Full name">
-            </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" name="" id="email" value="your@email.com">
-            </div>
-            <div>
-                <label for="pass">Password:</label>
-                <input type="password" name="pass" id="pass">
-            </div>
-            <div>
-                <label for="state">State:</label>
-                <select name="state" id="state">
-                    <option value="blank">---</option>
-                    <option value="CA">California</option>
-                    <option value="CO" selected>Colorado</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="UT">Utah</option>
-                </select>
-            </div>
-            <div>
-                <label><input type="checkbox" name="agree"> I agree to the terms and conditions.</label>
-            </div>
-            <div>
-                Gender:
-                <label><input type="radio" name="gender" value="male" > Male</label>
-                <label><input type="radio" name="gender" value="female"> Female</label>
-                <label><input type="radio" name="gender" value="other" > Other</label>
-            </div>
-            <div>
-                <label for="comment">Comments</label>
-                <textarea name="comments" id="comments"></textarea>
-            </div>
-            <input type="submit" value="Sign Up">
+            <fieldset>
+                <legend>Sign Up</legend>
+                <div class="form-row">
+                <label for="full-name">Full Name:</label>
+                <input type="text" name="" id="full-name" placeholder="Full name">
+                </div>
+                <div class="form-row">
+                    <label for="email">Email:</label>
+                    <input type="email" name="" id="email" >
+                </div>
+                <div class="form-row">
+                    <label for="pass">Password:</label>
+                    <input type="password" name="pass" id="pass">
+                </div>
+                <div class="form-row">
+                    <label for="state">State:</label>
+                    <select name="state" id="state">
+                        <option value="blank">---</option>
+                        <option value="CA">California</option>
+                        <option value="CO" selected>Colorado</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="UT">Utah</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label><input type="checkbox" name="agree"> I agree to the terms and conditions.</label>
+                </div>
+                <div class="form-row">
+                    Gender:
+                    <label><input type="radio" name="gender" value="male" > Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" value="other" > Other</label>
+                </div>
+                <div class="form-row">
+                    <label for="comment">Comments</label>
+                    <textarea name="comments" id="comments"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="spacer">
+                        <input type="submit" value="Sign Up">
+                    </div>
+                </div>
+            </fieldset>
         </form>
     </main>
     <h2>Answers the Questions</h2>
     <ol>
-        <li>The form tag has an "action" attribute. What does it do?
-            <p>The "action" attribute specifies the URL to which the form data will be sent when the form is submitted.</p></li>
-        <li>The form tag has a "method" attribute. What does it do?
-            <p>The "method" attribute specifies the HTTP method to use when sending the form data to the server.</p></li>
+        <li>What are different ways to style your form?
+            <p>You can style your form using CSS to change the layout, colors, fonts, and spacing of the form elements.</p>
         </li>
-        <li>What is the difference between a "POST" and a "GET"?
-            <p>A "POST" request sends the form data in the request body, while a "GET" request sends the form data in the query string.</p></li>
+        <li>How does flex help for both Desktop and Mobile phones?
+            <p>Flexbox can be used to create responsive layouts for both desktop and mobile devices.</p></li>
     </ol>
     <footer>
         <p>&copy; 2025 Kimchhay Heng</p>
