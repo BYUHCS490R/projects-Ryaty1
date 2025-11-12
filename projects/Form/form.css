@@ -1,0 +1,130 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f8f8fc;
+  margin: 0;
+  padding: 0;
+}
+header, footer {
+  background: #9242B6;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+header h1, footer p {
+  margin: 0;
+  font-size: 1.5em;
+}
+main {
+  margin: 20px auto;
+  max-width: 500px;
+  background: #fff;
+  padding: 24px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+h1 {
+  font-size: 2em;
+  color: #9242B6;
+  margin-top: 0;
+}
+form {
+  width: 100%;
+}
+fieldset {
+  border: 2px solid #9242B6;
+  padding: 20px;
+  background-color: rgba(237,202,26,0.12);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+legend {
+  font-weight: bold;
+  background: #9242B6;
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2em;
+}
+.form-row {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.form-row label:not(.radio-label):not(.checkbox-label) {
+  width: 150px;
+  min-width: 120px;
+  font-weight: bold;
+  text-align: right;
+}
+.form-row input:not([type="submit"]), 
+.form-row select, 
+.form-row textarea {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #9242B6;
+  border-radius: 6px;
+  background: #fafafc;
+  font-size: 1em;
+  transition: border .2s;
+}
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+  border: 2px solid #EDCA1A;
+}
+.form-row input[type="submit"] {
+  margin-left: 160px;
+  padding: 14px 36px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgb(146, 2, 159);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.form-row input[type="submit"]:focus, .form-row input[type="submit"]:hover {
+  background-color: rgb(115, 219, 18);
+  color: #222;
+}
+.radio-label, .checkbox-label {
+  margin-left: 6px;
+  margin-right: 18px;
+  font-weight: normal;
+  font-size: 1.02em;
+  text-align: left;
+}
+.checks-row {
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+}
+/* MOBILE STYLES */
+@media only screen and (max-width: 600px) {
+  .form-row, .checks-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .form-row label, .checkbox-label {
+    width: 100%;
+    min-width: unset;
+    text-align: left;
+    margin-bottom: 6px;
+  }
+  .form-row input[type="submit"] {
+    margin-left: 0;
+    width: 100%;
+    font-size: 1.1em;
+    padding: 20px 0;
+    margin-top: 16px;
+  }
+  fieldset {
+    width: 97%;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+/* Add your other custom styling below if needed */
