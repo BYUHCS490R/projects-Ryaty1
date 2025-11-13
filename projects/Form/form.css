@@ -8,7 +8,7 @@ body {
 
 
 header, footer {
-  background: #9242B6;
+  background: darkblue;
   color: white;
   padding: 20px 0;
   text-align: center;
@@ -34,9 +34,14 @@ main {
 
 h1 {
   font-size: 2em;
-  color: #9242B6;
+  color: gold;
   margin-top: 0;
   text-align: left;
+  padding: 0 10px;
+}
+
+.name {
+  color: darkblue;
 }
 
 
@@ -54,7 +59,7 @@ fieldset {
   max-width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
-  border: 2px solid #9242B6;
+  border: 2px solid darkblue;
   padding: 20px;
   background-color: rgba(237, 202, 26, 0.12);
   border-radius: 8px;
@@ -63,7 +68,7 @@ fieldset {
 
 legend {
   font-weight: bold;
-  background: #9242B6;
+  background: darkblue;
   color: #fff;
   padding: 8px 24px;
   border-radius: 8px;
@@ -93,7 +98,7 @@ legend {
 .form-row textarea {
   flex: 1;
   padding: 8px;
-  border: 1px solid #9242B6;
+  border: 1px solid darkblue;
   border-radius: 6px;
   background: #fafafc;
   font-size: 1em;
@@ -105,7 +110,7 @@ legend {
 .form-row textarea:focus {
   border: 2px solid #EDCA1A;
 }
-
+ 
 
 .form-row input[type="submit"] {
   margin-left: 160px;
@@ -113,7 +118,7 @@ legend {
   font-family: 'Courier New', Courier, monospace;
   font-size: 18px;
   font-weight: bold;
-  background-color: rgb(146, 2, 159);
+  background-color: darkblue;
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 6px;
@@ -122,8 +127,8 @@ legend {
 
 .form-row input[type="submit"]:focus,
 .form-row input[type="submit"]:hover {
-  background-color: rgb(239, 152, 13);
-  color: #3500f6;
+  background-color: gold;
+  color: #222;
 }
 
 
