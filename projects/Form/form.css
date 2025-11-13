@@ -1,43 +1,66 @@
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #f8f8fc;
   margin: 0;
   padding: 0;
 }
+
+
 header, footer {
   background: #9242B6;
   color: white;
   padding: 20px 0;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: smaller;
 }
+
 header h1, footer p {
   margin: 0;
   font-size: 1.5em;
 }
+
+
 main {
   margin: 20px auto;
   max-width: 500px;
   background: #fff;
   padding: 24px 16px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
+
 h1 {
   font-size: 2em;
   color: #9242B6;
   margin-top: 0;
+  text-align: left;
 }
+
+
+main form {
+  display: flex;
+  justify-content: center;
+}
+
 form {
   width: 100%;
 }
+
 fieldset {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
   border: 2px solid #9242B6;
   padding: 20px;
-  background-color: rgba(237,202,26,0.12);
+  background-color: rgba(237, 202, 26, 0.12);
   border-radius: 8px;
   margin-bottom: 20px;
 }
+
 legend {
   font-weight: bold;
   background: #9242B6;
@@ -47,20 +70,26 @@ legend {
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.2em;
 }
+
+
 .form-row {
   margin: 15px 0;
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
+
 .form-row label:not(.radio-label):not(.checkbox-label) {
   width: 150px;
   min-width: 120px;
   font-weight: bold;
   text-align: right;
 }
-.form-row input:not([type="submit"]), 
-.form-row select, 
+
+
+.form-row input:not([type="submit"]),
+.form-row select,
 .form-row textarea {
   flex: 1;
   padding: 8px;
@@ -68,11 +97,16 @@ legend {
   border-radius: 6px;
   background: #fafafc;
   font-size: 1em;
-  transition: border .2s;
+  transition: border 0.2s;
 }
-.form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
   border: 2px solid #EDCA1A;
 }
+
+
 .form-row input[type="submit"] {
   margin-left: 160px;
   padding: 14px 36px;
@@ -80,28 +114,35 @@ legend {
   font-size: 18px;
   font-weight: bold;
   background-color: rgb(146, 2, 159);
-  color: white;
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background .2s;
 }
-.form-row input[type="submit"]:focus, .form-row input[type="submit"]:hover {
-  background-color: rgb(115, 219, 18);
-  color: #222;
+
+.form-row input[type="submit"]:focus,
+.form-row input[type="submit"]:hover {
+  background-color: rgb(239, 152, 13);
+  color: #3500f6;
 }
-.radio-label, .checkbox-label {
+
+
+.radio-label,
+.checkbox-label {
   margin-left: 6px;
   margin-right: 18px;
   font-weight: normal;
   font-size: 1.02em;
   text-align: left;
 }
+
+
 .checks-row {
   flex-direction: row;
   align-items: center;
   margin-top: 10px;
 }
+
 
 @media only screen and (max-width: 600px) {
 
@@ -109,16 +150,14 @@ legend {
     text-align: center;
   }
 
-
   fieldset {
     width: 97%;
     padding-left: 16px;
     padding-right: 16px;
-    text-align: center; 
+    text-align: center;
     box-sizing: border-box;
     border-radius: 8px;
   }
-
 
   .form-row,
   .checks-row {
@@ -127,14 +166,12 @@ legend {
     gap: 10px;
   }
 
-
   .form-row label:not(.radio-label):not(.checkbox-label),
   .checkbox-label {
     width: auto;
     text-align: center;
     margin-bottom: 6px;
   }
-
 
   .form-row input:not([type="submit"]),
   .form-row select,
@@ -144,18 +181,17 @@ legend {
     padding: 10px;
   }
 
-
   .form-row input[type="radio"] {
     margin: 6px;
   }
+
   .radio-label {
     margin: 0 10px;
   }
 
-
   .checks-row {
-    flex-direction: row;      
-    align-items: center;     
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
     gap: 8px;
   }
@@ -163,7 +199,6 @@ legend {
   .checks-row input[type="checkbox"] {
     margin: 0;
     vertical-align: middle;
-    transform: translateY(-1px);
   }
 
   .checkbox-label {
