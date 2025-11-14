@@ -12,7 +12,7 @@
     </header>
     <main>
         <h1>Forms</h1>
-        <form action="formprocess.html" method="post">
+        <form action="formprocess.html" method="get" id="myform">
             <fieldset>
                 <legend>Sign Up</legend>
                 <div class="form-row">
@@ -63,11 +63,44 @@
         <li>What are different ways to style your form?
             <p>You can style your form using CSS to change the layout, colors, fonts, and spacing of the form elements.</p>
         </li>
+        <li>What is JavaScript? How did it get its name?
+            <p> JavaScript is a language </p>
+        </li>
         <li>How does flex help for both Desktop and Mobile phones?
             <p>Flexbox can be used to create responsive layouts for both desktop and mobile devices.</p></li>
     </ol>
     <footer>
         <p>&copy; 2025 Kimchhay Heng</p>
     </footer>
+    <script>
+        document.getElementById('myform').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert("Form Submitted.");
+
+            const fullname = document.getElementById('full-name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('pass').value;
+            const age = document.getElementById('state').value;
+
+            if (!fullname || !email)|| {
+                alert("You need a name and email.");
+                return;
+            }
+
+            if (!age || age <18) {
+                alert("You need to be at least 18 years old.");
+                return;
+            }
+
+            const formData = {
+                name: fullname,
+                email: email,
+                password: password,
+                age: age
+            };
+
+            console.log(formData);
+        });
+    </script>
 </body>
 </html>
