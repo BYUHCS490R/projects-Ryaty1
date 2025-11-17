@@ -11,6 +11,7 @@
         <h1>Kimchhay's Web Design</h1>
     </header>
     <main>
+        <div id="message"></div>
         <h1>Forms</h1>
         <form action="formprocess.html" method="get" id="myform">
             <fieldset>
@@ -64,17 +65,11 @@
     </main>
     <h2>Answers the Questions</h2>
     <ol>
-        <li>What is JavaScript? How did it get its name?
-            <p>A programming language for web interactivity. It got its name to ride on Java’s popularity, though they’re unrelated.</p>
+        <li>What is AJAX?
+            <p>AJAX stands for Asynchronous JavaScript and XML. It is a technique for creating fast and dynamic web pages.</p>
         </li>
-        <li>What are the two ways you can run JavaScript?
-            <p>By running JavaScript: In a browser or on a server with Node.js.</p>
-        </li>
-        <li>What was the most popular front-end js library?
-            <p>jQuery was the most popular front-end JavaScript library before React.</p>
-        </li>
-        <li>What is the most popular front-end js library today?
-            <p>React by Meta is the most popular front-end JavaScript library today.</p>
+        <li>Why do you put your JS Code in a separate file?
+            <p>To separate structure (HTML), presentation (CSS), and behavior (JavaScript) for better maintainability and reusability.</p>
         </li>
     </ol>
     <footer>
@@ -82,13 +77,14 @@
     </footer>
     <script>
         document.getElementById('myform').addEventListener('submit', function(event) {
+
             event.preventDefault();
             alert("Form Submitted.");
 
             const fullname = document.getElementById('full-name').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('pass').value;
-            const age = document.getElementById('state').value;
+            const age = document.getElementById('age').value;
 
             if (!fullname || !email) {
                 alert("You need a name and email.");
@@ -104,10 +100,30 @@
                 name: fullname,
                 email: email,
                 password: password,
-                age: age
-            };
-
+                age: age,
+                //state: state,
+                //agree: agree,
+                //gender: gender,
+                //comments: comments
+            }
+            
             console.log(formData);
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'submit.json', true);
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    alert('Form submitted successfully!');
+                    const response = JSON.parse(xhr.responseText);
+                    console.log(response);
+                    //document.getElementById('myform').reset();
+                    document.getElementById('myform').innerHTML = '';
+                    document.getElementById('message').innerText = response.message;
+                } else if (xhr.readyState === 4) {
+                    alert('Error submitting form.');
+                }
+            };
+            xhr.send(JSON.stringify(formData));
         });
     </script>
 </body>
