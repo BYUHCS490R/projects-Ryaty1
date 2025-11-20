@@ -85,15 +85,11 @@
     </footer>
     
     <script>
-        // Get the form element
         const form = document.querySelector('form');
 
-        // Add event listener for form submission
         form.addEventListener('submit', function(event) {
-            // Prevent the default form submission
             event.preventDefault();
             
-            // Collect all form data into a JavaScript object
             const formData = {
                 fullname: document.getElementById('fullname').value,
                 email: document.getElementById('email').value,
@@ -106,44 +102,35 @@
                 agree: document.getElementById('agree').checked
             };
             
-            // Log the form data to the console
             console.log('Form Data:', formData);
             
-            // Validation: Check at least 3 fields for presence
             if (!formData.fullname || !formData.email || !formData.password) {
                 alert('Please fill in your full name, email, and password.');
                 return;
             }
             
-            // Validation: Check password length (number validation)
             if (formData.password.length < 6) {
                 alert('Password must be at least 6 characters long.');
                 return;
             }
             
-            // Validation: Check if user agreed to terms
             if (!formData.agree) {
                 alert('You must agree to the terms and conditions.');
                 return;
             }
             
-            // Create AJAX request using XHR
             const xhr = new XMLHttpRequest();
-            
-            // Use GET instead of POST for GitHub Pages compatibility
+
             xhr.open('GET', 'submit.json', true);
             xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-            
-            // Handle the response
+
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Parse the JSON response
+
                     const response = JSON.parse(xhr.responseText);
                     
-                    // Display the success message on the page
                     displaySuccessMessage(response.message);
                     
-                    // Reset the form
                     form.reset();
                     
                     console.log('Server Response:', response);
@@ -152,13 +139,10 @@
                 }
             };
             
-            // Send the request
             xhr.send();
         });
 
-        // Function to display success message
         function displaySuccessMessage(message) {
-            // Create a success message div
             const messageDiv = document.createElement('div');
             messageDiv.style.cssText = `
                 background-color: #4CAF50;
@@ -172,14 +156,11 @@
             `;
             messageDiv.textContent = message;
             
-            // Insert the message at the top of main
             const main = document.querySelector('main');
             main.insertBefore(messageDiv, main.firstChild);
             
-            // Hide the form
             form.style.display = 'none';
             
-            // Optional: Show form again after 5 seconds
             setTimeout(() => {
                 messageDiv.remove();
                 form.style.display = 'flex';
