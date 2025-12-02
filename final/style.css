@@ -258,7 +258,7 @@ footer a {
 @media (max-width: 768px) {
   .header-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 0.5rem;
   }
 
@@ -268,10 +268,18 @@ footer a {
 
   nav ul {
     flex-direction: column;
+    width: 100%;
+    align-items: center; /* center the list items */
+  }
+
+  nav li {
+    width: 90%; /* boxes not full width, leave margin on sides */
   }
 
   nav a {
-    text-align: center;
     width: 100%;
+    text-align: center;
   }
 }
+
+
