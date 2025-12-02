@@ -1,0 +1,277 @@
+/* ===== Base reset ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #f7f9fb;
+  color: #222;
+}
+
+/* ===== Layout containers ===== */
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ===== Header and branding ===== */
+header {
+  background: #ffffff;
+  border-bottom: 3px solid #e13b2b;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.branding img.logo {
+  width: 48px;
+  height: 48px;
+}
+
+.branding h1 {
+  font-size: 1.5rem;
+  color: #e13b2b;
+}
+
+/* ===== Navigation ===== */
+nav {
+  margin-top: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  display: block;
+  padding: 0.4rem 0.8rem;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #2d7d46;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  background-color: #25653a;
+}
+
+nav a.current {
+  background-color: #e13b2b;
+}
+
+/* ===== Main content ===== */
+main {
+  background: #ffffff;
+  padding: 1.5rem 0 2rem;
+  min-height: 60vh;
+}
+
+main h2 {
+  margin-bottom: 0.75rem;
+  color: #2d7d46;
+}
+
+main p {
+  margin-bottom: 0.75rem;
+}
+
+/* Intro layout: image left, text right (desktop) */
+.intro-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+  gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.intro-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Generic image styling */
+.content-image {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+/* ===== Table styles ===== */
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.25rem;
+}
+
+caption {
+  caption-side: top;
+  font-weight: bold;
+  margin-bottom: 0.35rem;
+  color: #2d7d46;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: #f0f5f0;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Reference text */
+.reference-note {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.reference-note a {
+  color: #2d7d46;
+}
+
+/* ===== Video embeds ===== */
+.video-wrapper {
+  margin: 1.25rem 0;
+}
+
+.video-wrapper iframe {
+  max-width: 100%;
+  border: none;
+}
+
+/* ===== Form styles ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 550px;
+  margin: 0 auto 1.5rem;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+button,
+input[type="submit"] {
+  background-color: #e13b2b;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  align-self: flex-start;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #c12f22;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #2d7d46;
+  color: #ffffff;
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+
+footer .footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ffeed0;
+  text-decoration: underline;
+}
+
+/* ===== Responsive design ===== */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .intro-section {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav a {
+    text-align: center;
+    width: 100%;
+  }
+}
