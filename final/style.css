@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,12 +16,14 @@ body {
   color: #222;
 }
 
+/* ===== Layout containers ===== */
 .wrapper {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
+/* ===== Header and branding ===== */
 header {
   background: #ffffff;
   border-bottom: 3px solid #e13b2b;
@@ -49,6 +52,7 @@ header {
   color: #e13b2b;
 }
 
+/* ===== Navigation ===== */
 nav {
   margin-top: 0.5rem;
 }
@@ -78,6 +82,7 @@ nav a.current {
   background-color: #e13b2b;
 }
 
+/* ===== Main content ===== */
 main {
   background: #ffffff;
   padding: 1.5rem 0 2rem;
@@ -93,6 +98,7 @@ main p {
   margin-bottom: 0.75rem;
 }
 
+/* Intro layout: image left, text right (desktop) */
 .intro-section {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
@@ -107,6 +113,7 @@ main p {
   border-radius: 8px;
 }
 
+/* Generic image styling */
 .content-image {
   width: 100%;
   max-width: 450px;
@@ -116,6 +123,7 @@ main p {
   margin: 0 auto 1rem;
 }
 
+/* ===== Table styles ===== */
 .table-wrapper {
   overflow-x: auto;
   margin-top: 1rem;
@@ -150,7 +158,7 @@ tbody tr:nth-child(even) {
   background-color: #fafafa;
 }
 
-
+/* Reference text */
 .reference-note {
   font-size: 0.85rem;
   font-style: italic;
@@ -162,6 +170,7 @@ tbody tr:nth-child(even) {
   color: #2d7d46;
 }
 
+/* ===== Video embeds ===== */
 .video-wrapper {
   margin: 1.25rem 0;
 }
@@ -171,6 +180,7 @@ tbody tr:nth-child(even) {
   border: none;
 }
 
+/* ===== Form styles ===== */
 form {
   display: flex;
   flex-direction: column;
@@ -224,6 +234,19 @@ input[type="submit"]:hover {
   background-color: #c12f22;
 }
 
+.checkbox-row {
+  display: flex;
+  align-items: flex-start; /* align checkbox with first line of text */
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.checkbox-row input[type="checkbox"] {
+  margin-top: 0.2rem; /* slight tweak so it lines up nicely */
+}
+
+
+/* ===== Footer ===== */
 footer {
   background-color: #2d7d46;
   color: #ffffff;
@@ -243,6 +266,7 @@ footer a {
   text-decoration: underline;
 }
 
+/* ===== Responsive design ===== */
 @media (max-width: 768px) {
   .header-inner {
     flex-direction: column;
@@ -257,11 +281,11 @@ footer a {
   nav ul {
     flex-direction: column;
     width: 100%;
-    align-items: center; 
+    align-items: center; /* center the list items */
   }
 
   nav li {
-    width: 90%; 
+    width: 90%; /* boxes not full width, leave margin on sides */
   }
 
   nav a {
