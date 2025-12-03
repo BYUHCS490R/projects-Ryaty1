@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    color: rgb(7, 7, 102);
+    background-color: hsl(65, 29%, 91%);
+}
+#first {
+    color: rgb(201, 11, 11);
+    background-color: rgb(59, 243, 83);
+    border: 1.5px solid black;
+    margin  : 10px;
+    padding: 15px;
+}
+div {
+    border: 2px solid blue;
+    margin: 15px;
+    padding: 15px;
+    background-color:rgb(241, 235, 174);
+}
+.copyright {
+    font-size: 12px;
+    text-align: center;
+    color: gray;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: aqua;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 10px;
+}
